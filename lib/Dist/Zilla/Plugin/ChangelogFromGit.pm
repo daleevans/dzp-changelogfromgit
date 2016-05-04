@@ -408,6 +408,7 @@ sub rungit {
 	my ($self, $arrayp) = @_;
 	my $buf;
 	run(command => $arrayp, buffer => \$buf);
+	defined $buf or $buf = "";
 	return split("\n", $buf);
 }
 __PACKAGE__->meta->make_immutable;
